@@ -31,3 +31,12 @@ Real problems found while testing, with the evidence and the fix.
 - **Cause:** after hardening, the console and VTY lines use `login local`, so a username and password are required. Earlier projects used different values.
 - **Fix:** recorded the lab credentials in a private note (not in the repository) and reset one device with the `username` and `enable secret` commands.
 - **Lesson:** write credentials down before enabling `login local` and `login block-for`, and keep an unhardened backup file.
+
+## 5. OSPF key not supported on the tunnel interface
+
+- Symptom: `ip ospf message-digest-key` was rejected on Tunnel0.
+- Cause: this Packet Tracer version does not support the command on tunnel interfaces.
+- Decision: kept MD5 authentication on the internal routed links and relied on IPsec
+  (ESP with AES-256) to protect the tunnel, including the OSPF packets inside it.
+- Lesson: when a feature is missing in a simulator, say so, and check what else already
+  protects the same traffic.
