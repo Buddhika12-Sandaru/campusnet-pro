@@ -79,7 +79,7 @@ Details: [docs/rbac-policy.md](docs/rbac-policy.md). Addressing: [docs/addressin
 
 ## Verification
 
-A written test plan with expected results and evidence is in [docs/test-results.md](docs/test-results.md). Screenshots are in `screenshots/`.
+A written test plan with expected results and evidence is in [docs/test-results.md](docs/test-results.md). Screenshots are in [screenshots/](screenshots/).
 
 Note on ACL evidence: in this Packet Tracer version, the `ip access-group` binding on the Layer 3 switch VLAN interfaces is enforced but is not shown in `show running-config` or `show ip interface`. Enforcement is verified with ACL match counters (`show access-lists`) and with blocked and permitted traffic tests.
 
