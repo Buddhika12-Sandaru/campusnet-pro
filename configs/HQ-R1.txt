@@ -1,0 +1,201 @@
+HQ-R1#show ru
+HQ-R1#show running-config 
+Building configuration...
+
+Current configuration : 3857 bytes
+!
+version 15.1
+service timestamps log datetime msec
+service timestamps debug datetime msec
+service password-encryption
+!
+hostname HQ-R1
+!
+login block-for 120 attempts 3 within 60
+!
+!
+enable secret 5 $1$mERr$AncHPLmMIFlZ/0U1Wa1oE/
+!
+!
+ip dhcp excluded-address 192.168.10.1 192.168.10.10
+ip dhcp excluded-address 192.168.20.1 192.168.20.10
+ip dhcp excluded-address 192.168.30.1 192.168.30.10
+!
+ip dhcp pool STAFF
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ dns-server 192.168.40.10
+ip dhcp pool STUDENT
+ network 192.168.20.0 255.255.255.0
+ default-router 192.168.20.1
+ dns-server 192.168.40.10
+ip dhcp pool GUEST
+ network 192.168.30.0 255.255.255.0
+ default-router 192.168.30.1
+ dns-server 192.168.40.10
+clock timezone SLST 5 30
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+username admin privilege 15 secret 5 $1$mERr$GB1yAzJRVEWK9.TB5aSku/
+!
+!
+license udi pid CISCO2911/K9 sn FTX1524ZH82-
+license boot module c2900 technology-package securityk9
+!
+!
+!
+crypto isakmp policy 10
+ encr aes 256
+ authentication pre-share
+ group 2
+!
+crypto isakmp key VpnKey2026 address 200.0.1.1
+!
+!
+!
+crypto ipsec transform-set TSET esp-aes 256 esp-sha-hmac
+!
+crypto map VPNMAP 10 ipsec-isakmp 
+ set peer 200.0.1.1
+ set transform-set TSET 
+ match address 110
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip ssh time-out 60
+no ip domain-lookup
+ip domain-name campus.lab
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ description Stable address for DHCP relay and NTP
+ ip address 10.255.0.1 255.255.255.255
+!
+interface Tunnel0
+ ip address 10.255.255.1 255.255.255.252
+ mtu 1476
+ ipv6 address 2001:DB8:FF::1/64
+ tunnel source GigabitEthernet0/2
+ tunnel destination 200.0.1.1
+!
+!
+interface GigabitEthernet0/0
+ description To HQ-CORE1
+ ip address 10.0.0.1 255.255.255.252
+ ip ospf message-digest-key 1 md5 OspfKey1
+ ip nat inside
+ duplex auto
+ speed auto
+ ipv6 address 2001:DB8:10:FF::1/64
+!
+interface GigabitEthernet0/1
+ description To HQ-CORE2
+ ip address 10.0.0.5 255.255.255.252
+ ip ospf message-digest-key 1 md5 OspfKey1
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ description To ISP
+ ip address 200.0.0.1 255.255.255.252
+ ip nat outside
+ ip access-group OUTSIDE_IN in
+ duplex auto
+ speed auto
+ no cdp enable
+ crypto map VPNMAP
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ router-id 1.1.1.1
+ log-adjacency-changes
+ area 0 authentication message-digest
+ passive-interface GigabitEthernet0/2
+ passive-interface Loopback0
+ network 10.0.0.0 0.0.0.3 area 0
+ network 10.0.0.4 0.0.0.3 area 0
+ network 10.255.0.1 0.0.0.0 area 0
+ network 10.255.255.0 0.0.0.3 area 0
+ default-information originate
+!
+ip nat inside source list 1 interface GigabitEthernet0/2 overload
+ip classless
+ip route 0.0.0.0 0.0.0.0 200.0.0.2 
+!
+ip flow-export version 9
+!
+ipv6 route 2001:DB8:20:110::/64 2001:DB8:FF::2
+ipv6 route 2001:DB8:10:40::/64 2001:DB8:10:FF::2
+!
+ip access-list extended sl_def_acl
+ deny tcp any any eq telnet
+ deny tcp any any eq www
+ deny tcp any any eq 22
+ permit tcp any any eq 22
+access-list 1 permit 192.168.0.0 0.0.255.255
+access-list 110 permit gre host 200.0.0.1 host 200.0.1.1
+access-list 10 permit 192.168.10.0 0.0.0.255
+access-list 10 permit 192.168.110.0 0.0.0.255
+ip access-list extended OUTSIDE_IN
+ permit gre host 200.0.1.1 host 200.0.0.1
+ permit esp host 200.0.1.1 host 200.0.0.1
+ permit udp host 200.0.1.1 host 200.0.0.1 eq isakmp
+ deny ip 10.0.0.0 0.255.255.255 any
+ deny ip 172.16.0.0 0.15.255.255 any
+ deny ip 192.168.0.0 0.0.255.255 any
+ deny ip 127.0.0.0 0.255.255.255 any
+ permit icmp any any echo-reply
+ permit tcp any any established
+ deny ip any any
+!
+banner motd ^C Authorized access only. Activity is logged. ^C
+!
+!
+!
+!
+logging 192.168.40.10
+line con 0
+ logging synchronous
+ login local
+!
+line aux 0
+!
+line vty 0 4
+ access-class 10 in
+ login local
+ transport input ssh
+!
+!
+ntp master 3
+!
+end
+
+
+HQ-R1# 
+HQ-R1#
+*Mar 01, 04:17:02.1717: 04:17:02: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on Tunnel0 from LOADING to FULL, Loading Done
+HQ-R1#

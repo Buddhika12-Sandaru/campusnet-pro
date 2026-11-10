@@ -1,0 +1,525 @@
+C3560 Boot Loader (C3560-HBOOT-M) Version 12.2(25r)SEC, RELEASE SOFTWARE (fc4)
+cisco WS-C3560-24PS (PowerPC405) processor (revision P0) with 122880K/8184K bytes of memory.
+3560-24PS starting...
+Base ethernet MAC Address: 0060.47A1.0CB0
+Xmodem file system is available.
+Initializing Flash...
+flashfs[0]: 4 files, 0 directories
+flashfs[0]: 0 orphaned files, 0 orphaned directories
+flashfs[0]: Total bytes: 64016384
+flashfs[0]: Bytes used: 8918927
+flashfs[0]: Bytes available: 55097457
+flashfs[0]: flashfs fsck took 1 seconds.
+...done Initializing Flash.
+
+Boot Sector Filesystem (bs:) installed, fsid: 3
+Parameter Block Filesystem (pb:) installed, fsid: 4
+
+
+Loading "flash:/c3560-advipservicesk9-mz.122-37.SE1.bin"...
+######################### [OK]
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+
+Cisco IOS Software, C3560 Software (C3560-ADVIPSERVICESK9-M), Version 12.2(37)SE1, RELEASE SOFTWARE (fc1)
+Copyright (c) 1986-2007 by Cisco Systems, Inc.
+Compiled Thu 05-Jul-07 22:22 by pt_team
+Image text-base: 0x00003000, data-base: 0x01500000
+
+
+
+POST: CPU MIC register Tests : Begin
+POST: CPU MIC register Tests : End, Status Passed
+
+POST: PortASIC Memory Tests : Begin
+POST: PortASIC Memory Tests : End, Status Passed
+
+POST: CPU MIC interface Loopback Tests : Begin
+POST: CPU MIC interface Loopback Tests : End, Status Passed
+
+POST: PortASIC RingLoopback Tests : Begin
+POST: PortASIC RingLoopback Tests : End, Status Passed
+
+POST: Inline Power Controller Tests : Begin
+POST: Inline Power Controller Tests : End, Status Passed
+
+POST: PortASIC CAM Subsystem Tests : Begin
+POST: PortASIC CAM Subsystem Tests : End, Status Passed
+
+POST: PortASIC Port Loopback Tests : Begin
+POST: PortASIC Port Loopback Tests : End, Status Passed
+
+Waiting for Port download...Complete
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+
+cisco WS-C3560-24PS (PowerPC405) processor (revision P0) with 122880K/8184K bytes of memory.
+Processor board ID CAT1037RJF7
+24 FastEthernet/IEEE 802.3 interface(s)
+2 Gigabit Ethernet/IEEE 802.3 interface(s)
+
+63488K bytes of flash-simulated non-volatile configuration memory.
+Base ethernet MAC Address       : 0060.47A1.0CB0
+Motherboard assembly number     : 73-9673-09
+Power supply part number        : 341-0029-05
+Motherboard serial number       : CAT103758VY
+Power supply serial number      : DTH1036C7UB
+Model revision number           : P0
+Motherboard revision number     : A0
+Model number                    : WS-C3560-24PS-E
+System serial number            : CAT1037RJF7
+Top Assembly Part Number        : 800-26380-04
+Top Assembly Revision Number    : B0
+Version ID                      : V06
+CLEI Code Number                : COM1100ARC
+Hardware Board Revision Number  : 0x01
+
+
+Switch   Ports  Model              SW Version              SW Image
+------   -----  -----              ----------              ----------
+*    1   26     WS-C3560-24PS      12.2(37)SE1             C3560-ADVIPSERVICESK
+
+Cisco IOS Software, C3560 Software (C3560-ADVIPSERVICESK9-M), Version 12.2(37)SE1, RELEASE SOFTWARE (fc1)
+Copyright (c) 1986-2007 by Cisco Systems, Inc.
+Compiled Thu 05-Jul-07 22:22 by pt_team
+
+Press RETURN to get started!
+
+
+*Mar 01, 04:21:09.2121:  %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 192.168.40.10 port 514 started - CLI initiated
+*Mar 01, 04:21:09.2121: %LINK-3-UPDOWN: Interface Vlan10, changed state to down
+*Mar 01, 04:21:09.2121: %LINK-3-UPDOWN: Interface Vlan20, changed state to down
+*Mar 01, 04:21:09.2121: %LINK-3-UPDOWN: Interface Vlan30, changed state to down
+*Mar 01, 04:21:09.2121: %LINK-3-UPDOWN: Interface Vlan40, changed state to down
+*Mar 01, 04:21:09.2121: %LINK-3-UPDOWN: Interface Vlan99, changed state to down
+*Mar 01, 04:21:09.2121: %LINK-5-CHANGED: Interface Vlan10, changed state to up
+*Mar 01, 04:21:09.2121: %LINK-5-CHANGED: Interface Vlan20, changed state to up
+*Mar 01, 04:21:09.2121: %LINK-5-CHANGED: Interface Vlan30, changed state to up
+*Mar 01, 04:21:09.2121: %LINK-5-CHANGED: Interface Vlan40, changed state to up
+*Mar 01, 04:21:09.2121: %LINK-5-CHANGED: Interface Vlan99, changed state to up
+*Mar 01, 04:21:09.2121: %LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+*Mar 01, 04:21:09.2121: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+*Mar 01, 04:21:09.2121: %LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+*Mar 01, 04:21:09.2121: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+*Mar 01, 04:21:09.2121: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan10, changed state to up
+*Mar 01, 04:21:09.2121: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan20, changed state to up
+*Mar 01, 04:21:09.2121: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan30, changed state to up
+*Mar 01, 04:21:09.2121: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan40, changed state to up
+*Mar 01, 04:21:09.2121: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan99, changed state to up
+*Mar 01, 04:21:09.2121: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to up
+*Mar 01, 04:21:09.2121: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+*Mar 01, 04:21:09.2121: %LINK-5-CHANGED: Interface FastEthernet0/3, changed state to up
+*Mar 01, 04:21:09.2121: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+*Mar 01, 04:21:09.2121: %LINK-5-CHANGED: Interface FastEthernet0/4, changed state to up
+*Mar 01, 04:21:09.2121: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+*Mar 01, 04:21:09.2121: %LINK-5-CHANGED: Interface Port-channel12, changed state to up
+*Mar 01, 04:21:09.2121: %LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel12, changed state to up
+
+*Mar 01, 04:21:10.2121: SPANTREE-2-ROOTGUARDBLOCK: Port 0/3 tried to become non-designated in VLAN 999.
+
+*Mar 01, 04:21:10.2121: oved to root-inconsistent state
+*Mar 01, 04:21:11.2121: SPANTREE-2-ROOTGUARDBLOCK: Port 0/4 tried to become non-designated in VLAN 999.
+
+*Mar 01, 04:21:11.2121: oved to root-inconsistent state
+
+*Mar 01, 04:21:26.2121: %HSRP-6-STATECHANGE: Vlan10 Grp 10 state Speak -> Standby
+*Mar 01, 04:21:26.2121: %HSRP-6-STATECHANGE: Vlan10 Grp 10 state Standby -> Active
+
+*Mar 01, 04:21:27.2121: %HSRP-6-STATECHANGE: Vlan99 Grp 99 state Speak -> Standby
+*Mar 01, 04:21:27.2121: %HSRP-6-STATECHANGE: Vlan99 Grp 99 state Standby -> Active
+
+*Mar 01, 04:21:39.2121: %HSRP-6-STATECHANGE: Vlan10 Grp 10 state Speak -> Standby
+
+*Mar 01, 04:21:44.2121: %HSRP-6-STATECHANGE: Vlan30 Grp 30 state Speak -> Standby
+
+*Mar 01, 04:21:45.2121: %HSRP-6-STATECHANGE: Vlan20 Grp 20 state Speak -> Standby
+
+*Mar 01, 04:21:48.2121: %HSRP-6-STATECHANGE: Vlan99 Grp 99 state Speak -> Standby
+
+*Mar 01, 04:21:49.2121: 04:21:49: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/1 from LOADING to FULL, Loading Done
+
+*Mar 01, 04:21:54.2121: %HSRP-6-STATECHANGE: Vlan40 Grp 40 state Speak -> Standby
+ Authorized access only. Activity is logged. 
+
+User Access Verification
+
+Username: admin
+Password: 
+
+HQ-CORE2#en
+HQ-CORE2#show ru
+HQ-CORE2#show running-config 
+Building configuration...
+
+Current configuration : 7412 bytes
+!
+version 12.2(37)SE1
+service timestamps log datetime msec
+service timestamps debug datetime msec
+service password-encryption
+!
+hostname HQ-CORE2
+!
+login block-for 120 attempts 3 within 60
+!
+no profinet
+enable secret 5 $1$mERr$AncHPLmMIFlZ/0U1Wa1oE/
+!
+!
+!
+clock timezone SLST 5 30
+!
+!
+!
+ip routing
+!
+!
+!
+!
+username admin privilege 15 secret 5 $1$mERr$GB1yAzJRVEWK9.TB5aSku/
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip ssh time-out 60
+no ip domain-lookup
+ip domain-name campus.lab
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree vlan 1,10,20,30,40,99 priority 8192
+!
+!
+!
+!
+!
+!
+interface Port-channel12
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/1
+ description EtherChannel to HQ-CORE1
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 12 mode active
+!
+interface FastEthernet0/2
+ description EtherChannel to HQ-CORE1
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 12 mode active
+!
+interface FastEthernet0/3
+ description Uplink to access switch
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+ spanning-tree guard root
+!
+interface FastEthernet0/4
+ description Uplink to access switch
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+ spanning-tree guard root
+!
+interface FastEthernet0/5
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/6
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/7
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/8
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/9
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/10
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/11
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/12
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/13
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/14
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/15
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/16
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/17
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/18
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/19
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/20
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/21
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/22
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/23
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/24
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet0/1
+ description To HQ-R1
+ no switchport
+ ip address 10.0.0.6 255.255.255.252
+ ip ospf message-digest-key 1 md5 OspfKey1
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ description UNUSED
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ description STAFF gateway
+ mac-address 0060.47a1.0c01
+ ip address 192.168.10.3 255.255.255.0
+ ip helper-address 10.255.0.1
+ standby 10 ip 192.168.10.1
+ standby 10 preempt
+ standby 10 track GigabitEthernet0/1
+!
+interface Vlan20
+ description STUDENT gateway
+ mac-address 0060.47a1.0c02
+ ip address 192.168.20.3 255.255.255.0
+ ip helper-address 10.255.0.1
+ standby 20 ip 192.168.20.1
+ standby 20 preempt
+ standby 20 track GigabitEthernet0/1
+!
+interface Vlan30
+ description GUEST gateway
+ mac-address 0060.47a1.0c03
+ ip address 192.168.30.3 255.255.255.0
+ ip helper-address 10.255.0.1
+ standby 30 ip 192.168.30.1
+ standby 30 preempt
+ standby 30 track GigabitEthernet0/1
+!
+interface Vlan40
+ description SERVERS gateway
+ mac-address 0060.47a1.0c04
+ ip address 192.168.40.3 255.255.255.0
+ standby 40 ip 192.168.40.1
+ standby 40 preempt
+ standby 40 track GigabitEthernet0/1
+!
+interface Vlan99
+ description MGMT gateway
+ mac-address 0060.47a1.0c05
+ ip address 192.168.99.3 255.255.255.0
+ standby 99 ip 192.168.99.1
+ standby 99 preempt
+ standby 99 track GigabitEthernet0/1
+!
+router ospf 1
+ router-id 4.4.4.4
+ log-adjacency-changes
+ area 0 authentication message-digest
+ passive-interface default
+ no passive-interface GigabitEthernet0/1
+ network 10.0.0.4 0.0.0.3 area 0
+ network 192.168.0.0 0.0.255.255 area 0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+ip access-list extended sl_def_acl
+ deny tcp any any eq telnet
+ deny tcp any any eq www
+ deny tcp any any eq 22
+ permit tcp any any eq 22
+ip access-list extended STUDENT_IN
+ permit ip 192.168.20.0 0.0.0.255 host 192.168.20.1
+ permit udp any eq bootpc any eq bootps
+ permit icmp 192.168.20.0 0.0.0.255 192.168.10.0 0.0.0.255 echo-reply
+ permit tcp 192.168.20.0 0.0.0.255 192.168.10.0 0.0.0.255 established
+ permit udp 192.168.20.0 0.0.0.255 host 192.168.40.10 eq domain
+ permit tcp 192.168.20.0 0.0.0.255 host 192.168.40.10 eq www
+ deny ip 192.168.20.0 0.0.0.255 192.168.0.0 0.0.255.255
+ deny ip 192.168.20.0 0.0.0.255 10.0.0.0 0.255.255.255
+ permit ip any any
+ip access-list extended GUEST_IN
+ permit ip 192.168.30.0 0.0.0.255 host 192.168.30.1
+ permit udp any eq bootpc any eq bootps
+ permit icmp 192.168.30.0 0.0.0.255 192.168.10.0 0.0.0.255 echo-reply
+ permit tcp 192.168.30.0 0.0.0.255 192.168.10.0 0.0.0.255 established
+ permit udp 192.168.30.0 0.0.0.255 host 192.168.40.10 eq domain
+ deny ip 192.168.30.0 0.0.0.255 192.168.0.0 0.0.255.255
+ deny ip 192.168.30.0 0.0.0.255 10.0.0.0 0.255.255.255
+ permit ip any any
+ip access-list extended SERVERS_IN
+ permit udp host 192.168.40.10 eq domain any
+ permit tcp 192.168.40.0 0.0.0.255 any established
+ permit icmp 192.168.40.0 0.0.0.255 any echo-reply
+ deny ip 192.168.40.0 0.0.0.255 192.168.0.0 0.0.255.255
+ deny ip 192.168.40.0 0.0.0.255 10.0.0.0 0.255.255.255
+ permit ip any any
+access-list 10 permit 192.168.10.0 0.0.0.255
+access-list 10 permit 192.168.110.0 0.0.0.255
+!
+banner motd ^C Authorized access only. Activity is logged. ^C
+!
+!
+!
+!
+!
+logging 192.168.40.10
+line con 0
+ logging synchronous
+ login local
+!
+line aux 0
+!
+line vty 0 4
+ access-class 10 in
+ login local
+ transport input ssh
+!
+!
+!
+ntp server 10.255.0.1
+!
+end
+
+
+HQ-CORE2# 
