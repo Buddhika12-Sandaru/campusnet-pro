@@ -28,7 +28,7 @@ graph TD
 ```
 ![Packet Tracer Topology](diagrams/topology.png)
 
-Full Packet Tracer view: `diagrams/topology.png`. Packet Tracer file: `CampusNet-Pro.pkt`.
+Packet Tracer file:[CampusNet-Pro.pkt](CampusNet-Pro.pkt)
 
 ## What is implemented
 
