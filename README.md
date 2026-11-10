@@ -26,6 +26,7 @@ graph TD
   BRR1 --- SW[BR-SW1]
   SW --- BP["Branch PCs"]
 ```
+![Packet Tracer Topology](diagrams/topology.png)
 
 Full Packet Tracer view: `diagrams/topology.png`. Packet Tracer file: `CampusNet-Pro.pkt`.
 
